@@ -91,7 +91,7 @@ float rand(inout uint seed) {
 vec3 trace(vec3 start, vec3 dir, inout uint seed) {
     vec3 total = vec3(0.001);
     vec3 mul = vec3(1.0);
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < 8; i++) {
         mat4 result = mat4(0.0);
         result[0].w = 100000.0;
         cast_ray(start, dir, result);
@@ -137,7 +137,7 @@ void main() {
 
     uint seed = gid.y * 1920 + gid.x;
 
-    int samples = 16384;
+    int samples = 128;
 
     vec3 color = vec3(0.0);
     for (int i = 0; i < samples; i++) {
