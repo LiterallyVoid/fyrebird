@@ -1,7 +1,7 @@
 CFLAGS=-O0 -g -Wall -Wextra
 LDFLAGS=-lvulkan
 
-all: compute.spv ray
+all: compute.spv fyrebird
 
 compute.spv: src/compute.glsl
 	glslc -fshader-stage=compute src/compute.glsl -o compute.spv
